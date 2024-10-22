@@ -2,6 +2,8 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { envs } from './config';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { CustomExceptionFilter } from './common';
+
 
 async function bootstrap() 
 {
@@ -17,6 +19,8 @@ async function bootstrap()
     })
     );
   
+
+  app.useGlobalFilters(new CustomExceptionFilter());
   await app.listen(envs.port);
 
 
