@@ -20,7 +20,6 @@ import { envs, PRODUCT_SERVICE } from 'src/config';
         }
       },
     ]),
-  
   ]
 
 
