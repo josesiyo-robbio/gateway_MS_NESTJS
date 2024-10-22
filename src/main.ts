@@ -1,3 +1,6 @@
+
+
+
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { envs } from './config';
@@ -12,15 +15,14 @@ async function bootstrap()
 
   app.setGlobalPrefix('api');
   
-  app.useGlobalPipes(
-    new ValidationPipe({
-    whitelist: true,
-    forbidNonWhitelisted: true,
-    })
-    );
+  app.useGlobalPipes
+  (
+    new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, })
+  );
   
 
   app.useGlobalFilters(new CustomExceptionFilter());
+  
   await app.listen(envs.port);
 
 

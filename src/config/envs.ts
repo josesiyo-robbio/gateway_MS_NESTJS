@@ -7,19 +7,14 @@ interface EnvVars
     PORT : number;
     PRODUCTS_MICROSERVICE_PORT : number;
     PRODUCTS_MICROSERVICE_HOST : string;
-
-
 }
 
-const envsScheme = joi.object({
+const envsScheme = joi.object
+({
     PORT : joi.number().required(),
-
     PRODUCTS_MICROSERVICE_PORT : joi.number().required(),
-
     PRODUCTS_MICROSERVICE_HOST : joi.string().required(),
-
-})
-.unknown(true);
+}).unknown(true);
 
 
 const {error, value} = envsScheme.validate(process.env);
