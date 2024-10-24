@@ -1,0 +1,3 @@
+[submodule "products_MS_NESTJS"]
+	path = products_MS_NESTJS
+	url = https://github.com/josesiyo-robbio/products_MS_NESTJS.git
