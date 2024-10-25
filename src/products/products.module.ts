@@ -1,24 +1,10 @@
-
-
-
 import { Module } from '@nestjs/common';
 import { ProductsController } from './products.controller';
 import { NatsModule } from 'src/transports/nats.module';
 
-
-
-@Module
-({
+@Module({
   controllers: [ProductsController],
   providers: [],
-  imports : 
-  [
-    NatsModule
-  ]
-
-
+  imports: [NatsModule],
 })
-export class ProductsModule 
-{
-
-}
+export class ProductsModule {}

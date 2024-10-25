@@ -1,9 +1,9 @@
 import { IsEnum, IsOptional } from 'class-validator';
-import { PaginationDto } from 'src/common';
 import { OrderStatus, OrderStatusList } from '../enum/order.enum';
 
 
-export class OrderPaginationDto extends PaginationDto {
+
+export class StatusDto {
 
 
   @IsOptional()
@@ -11,6 +11,5 @@ export class OrderPaginationDto extends PaginationDto {
     message: `Valid status are ${ OrderStatusList }`
   })
   status: OrderStatus;
-
 
 }
