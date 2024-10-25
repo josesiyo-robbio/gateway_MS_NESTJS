@@ -1,5 +1,7 @@
-import { Catch, ArgumentsHost, ExceptionFilter } from '@nestjs/common';
 
+
+
+import { Catch, ArgumentsHost, ExceptionFilter } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
 
 @Catch(RpcException)
@@ -16,8 +18,6 @@ export class RpcCustomExceptionFilter implements ExceptionFilter {
         message: rpcError.toString().substring(0, rpcError.toString().indexOf('(') - 1)
       })
     }
-
-
 
     if (
       typeof rpcError === 'object' &&
